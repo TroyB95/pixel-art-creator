@@ -34,6 +34,8 @@ sizePicker.addEventListener('submit', function(e){
 	
 })
 
+window.oncontextmenu = ()=> false;
+
 function makeGrid() {
 	canvas.innerHTML = '';
 
@@ -49,10 +51,21 @@ function makeGrid() {
 	}	
 
 	// When a user clicks a cell, change its background color
-		canvas.addEventListener("click", function(e) {
+		canvas.addEventListener("mousedown", function(e) {
+			if(e.button === 0) {
   			if (e.target && e.target.nodeName == "TD") {
     			e.target.style.backgroundColor = color;
   			}
+  		}
+  	});
+
+	// When the user right clicks - change cell background to white
+  		canvas.addEventListener("contextmenu", function(e) {
+			if(e.button === 2) {
+  			if (e.target && e.target.nodeName == "TD") {
+    			e.target.style.backgroundColor = 'white';
+  			}
+  		}
 	});
 
 }
