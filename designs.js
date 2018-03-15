@@ -1,6 +1,6 @@
 // Select color input
 const colorPicker = document.querySelector('#colorPicker');
-let color = '';
+let color = 'black';
 
 colorPicker.addEventListener('change', function(e){
 	 color = e.target.value;
@@ -23,31 +23,50 @@ heightSelector.addEventListener('change', function(e){
 	height = e.target.value;
 })
 
+
+
+// When size is submitted by the user, call makeGrid()
+const canvas = document.querySelector('#pixelCanvas');
+
 sizePicker.addEventListener('submit', function(e){
 	e.preventDefault();
 	makeGrid();
 	
 })
 
-// When size is submitted by the user, call makeGrid()
-const canvas = document.querySelector('#pixelCanvas');
-
-
-
-
 function makeGrid() {
 	canvas.innerHTML = '';
 
-	for(var i = 0; i <= height; i++){
+	for(var i = 0; i < height; i++){
 		const row = document.createElement('TR');
 		canvas.appendChild(row);
 
-		for(var j = 0; j <= width; j++){
+		for(var j = 0; j < width; j++){
 			const col = document.createElement('TD');
 			row.appendChild(col);
 			
 		}
-	}
-	console.log('hello');
+	}	
+
+	// When a user clicks a cell, change its background color
+		canvas.addEventListener("click", function(e) {
+  			if (e.target && e.target.nodeName == "TD") {
+    			e.target.style.backgroundColor = color;
+  			}
+	});
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
