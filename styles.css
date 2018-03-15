@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-color: #FDFF69;
 }
 
 h1 {
@@ -25,6 +26,7 @@ td {
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    background-color: white;
 }
 
 tr {
