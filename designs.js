@@ -1,5 +1,5 @@
 // Select color input
-const colorPicker = document.querySelector('#colorPicker');
+const colorPicker = document.querySelector('#color-picker');
 let color = 'black';
 
 colorPicker.addEventListener('change', function(e){
@@ -37,7 +37,7 @@ heightSelector.addEventListener('change', function(e){
 
 
 // When size is submitted by the user, call makeGrid()
-const canvas = document.querySelector('#pixelCanvas');
+const canvas = document.querySelector('#pixel-canvas');
 
 sizePicker.addEventListener('submit', function(e){
 	e.preventDefault();
