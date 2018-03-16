@@ -11,9 +11,20 @@ colorPicker.addEventListener('change', function(e){
 let width = 0;
 let height = 0;
 
-const sizePicker = document.querySelector('#sizePicker');
-const heightSelector = document.querySelector('#inputHeight');
-const widthSelector = document.querySelector('#inputWidth');
+const sizePicker = document.querySelector('#size-picker');
+const heightSelector = document.querySelector('#input-height');
+const widthSelector = document.querySelector('#input-width');
+
+// Pixel Size variables
+const pixelSel = document.querySelector('#pixel-size');
+
+// The default size of pixels
+let pixelHeight = 20;
+let pixelWidth = 20;
+
+// Selecting all the tr's and td's
+let rows = '';
+let cols = '';
 
 widthSelector.addEventListener('change', function(e){
 	width = e.target.value;
@@ -34,6 +45,7 @@ sizePicker.addEventListener('submit', function(e){
 	
 })
 
+// Stops the right-click menu appearing
 window.oncontextmenu = ()=> false;
 
 function makeGrid() {
@@ -48,7 +60,20 @@ function makeGrid() {
 			row.appendChild(col);
 			
 		}
+
 	}	
+
+	rows = document.querySelectorAll('tr');
+	cols = document.querySelectorAll('td');
+
+		for(var i = 0; i <= rows.length - 1; i++){
+				rows[i].style.height = (pixelHeight +'px');
+			}
+
+		for(var i = 0; i <= cols.length - 1; i++){
+				cols[i].style.width = (pixelWidth + 'px');
+			}
+
 
 	// When a user clicks a cell, change its background color
 		canvas.addEventListener("mousedown", function(e) {
@@ -68,8 +93,15 @@ function makeGrid() {
   		}
 	});
 
-}
+  	// Set the variables from the user input
+		pixelSel.addEventListener('change', function(e){
+			pixelHeight = e.target.value;
+			pixelWidth = e.target.value;
+	});
 
+
+
+}
 
 
 
