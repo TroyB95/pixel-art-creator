@@ -19,8 +19,8 @@ const widthSelector = document.querySelector('#input-width');
 const pixelSel = document.querySelector('#pixel-size');
 
 // The default size of pixels
-let pixelHeight = 20;
-let pixelWidth = 20;
+let pixelHeight = 10;
+let pixelWidth = 10;
 
 // Selecting all the tr's and td's
 let rows = '';
@@ -66,18 +66,18 @@ function makeGrid() {
 	rows = document.querySelectorAll('tr');
 	cols = document.querySelectorAll('td');
 
-		for(var i = 0; i <= rows.length - 1; i++){
+	for(var i = 0; i <= rows.length - 1; i++){
 				rows[i].style.height = (pixelHeight +'px');
-			}
+		}
 
-		for(var i = 0; i <= cols.length - 1; i++){
+	for(var i = 0; i <= cols.length - 1; i++){
 				cols[i].style.width = (pixelWidth + 'px');
-			}
+		}
 
 
 	// When a user clicks a cell, change its background color
-		canvas.addEventListener("mousedown", function(e) {
-			if(e.button === 0) {
+	canvas.addEventListener("mousedown", function(e) {
+		if(e.button === 0) {
   			if (e.target && e.target.nodeName == "TD") {
     			e.target.style.backgroundColor = color;
   			}
@@ -85,8 +85,8 @@ function makeGrid() {
   	});
 
 	// When the user right clicks - change cell background to white
-  		canvas.addEventListener("contextmenu", function(e) {
-			if(e.button === 2) {
+  	canvas.addEventListener("contextmenu", function(e) {
+		if(e.button === 2) {
   			if (e.target && e.target.nodeName == "TD") {
     			e.target.style.backgroundColor = 'white';
   			}
@@ -94,8 +94,8 @@ function makeGrid() {
 	});
 
   	// Set the variables from the user input
-		pixelSel.addEventListener('change', function(e){
-			pixelHeight = e.target.value;
+	pixelSel.addEventListener('change', function(e){
+		pixelHeight = e.target.value;
 			pixelWidth = e.target.value;
 	});
 
