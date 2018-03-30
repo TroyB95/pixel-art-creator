@@ -1,15 +1,17 @@
 # Pixel Art Maker Project
 
 ## Table of Contents
-
+* [About](#about)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
 
+## About
+A simple pixel art creator made for the first project of the Front-end Web developement nanodegree by Udacity! 
+Created using plain javascript.
+
 ## Instructions
-
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+Right-click to paint a pixel
+Left-click to remove paint from the pixel
 
 ## Contributing
 
